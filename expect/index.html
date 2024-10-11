@@ -1,57 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My GitHub Pages Site</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
-</head>
-<body>
-
 <header>
     <!-- Logo Placeholder -->
     <img src="expect_logo.png" alt="Logo" id="logo">
-    <h1>Welcome to My Website</h1>
+    <h1>eXpect</h1>
+    
+    <!-- Subheader -->
+    <h2>On the Security Implications of Violations in AXI Implementations</h2>
 
     <nav>
         <!-- Link to GitHub Repository -->
         <a href="#about">About</a>
-        <a href="https://github.com/axi-security/eXpect" target="_blank">GitHub Repo</a>
+        <a href="https://github.com/axi-security/eXpect" target="_blank">Code</a>
         <!-- Blog Tab Placeholder -->
         <a href="blog.html">Blog</a>
     </nav>
 </header>
 
-<section id="about">
+<!-- Section for Authors -->
+<section id="authors">
     <div class="content">
-        <h2>Abstract</h2>
-        <p>
-            The Arm Advanced eXtensible Interface (AXI) protocol is a
-widely used on-chip interconnect for processors, accelerators, memories,
-and other IP cores. Any bugs in the AXI implementations pose a security
-risk to the chip’s correctness. Buggy or non-compliant third-party IPs
-can use AXI implementation bugs to bypass the security mechanisms of
-the whole system. Identifying AXI implementation bugs is challenging
-because the incomplete specifications allow room for implementation-
-specific behavior in performant designs. EXPECT is a systematic approach
-for analyzing AXI implementations to detect functional and security
-violations. We use EXPECT to test seven implementations of varying
-complexity, including the ones from AMD Xilinx and RISC-V PULP. We
-identified 135 property violations. We sampled 10 of them to show seven
-exploits demonstrating that an attacker can use these bugs to trick victim
-IPs. Our exploits achieve outcomes such as using stale data, skipping
-reads and writes, leaking intermediate data, and reading and writing
-attacker-controlled data to attacker-controlled addresses. We evaluated
-our exploits in realistic scenarios deployed on FPGA. We show that AMD
-Xilinx protocol checker IPs miss 5/7 of our exploits.
-        </p>
+        <h3>Authors</h3>
+        <ul>
+            <li><a href="https://melisandezonta.com" target="_blank">Melisande Zonta-Roudes</a></li>
+            <li>Andres Meza</li>
+            <li>Nora Hinderling</li>
+            <li><a href="https://eit.rptu.de/fgs/eis/people/deutschmann" target="_blank">Lucas Deutschmann</a></li>
+            <li><a href="https://frestucc.github.io" target="_blank">Francesco Restuccia</a></li>
+            <li><a href="https://kastner.ucsd.edu/ryan" target="_blank">Ryan Kastner</a></li>
+            <li><a href="https://n.ethz.ch/~sshivaji" target="_blank">Shweta Shinde</a></li>
+        </ul>
+
+        <!-- Section for the link to the paper -->
+        <div class="paper-link">
+            <h3>Paper</h3>
+            <p>
+                You can view the full paper <a href="your-paper-link-here" target="_blank">here</a>.
+            </p>
+        </div>
     </div>
 </section>
-
-<footer>
-    &copy; 2024 My GitHub Pages Site
-</footer>
-
-</body>
-</html>
