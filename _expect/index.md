@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /expect/about/
+permalink: /expect/
 ---
 
 # eXpect: On the Security Implications of Violations in AXI Implementations
