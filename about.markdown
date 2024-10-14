@@ -19,9 +19,11 @@ You can find the source code for Jekyll at GitHub:
 [jekyll-organization]: https://github.com/jekyll
 -->
 
+<!--
 ---
 title: "eXpect: On the Security Implications of Violations in AXI Implementations"
 ---
+-->
 
 # eXpect
 
