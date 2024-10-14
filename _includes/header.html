@@ -13,6 +13,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative; /* Needed for positioning the logo */
         }
 
         /* Wrapper to contain the title and nav */
@@ -30,6 +31,14 @@
             color: #ffffff;
             text-decoration: none;
             font-weight: bold;
+        }
+
+        /* Logo Styles */
+        .logo-container {
+            position: absolute;
+            left: 20px;  /* Adjust to move the logo more to the corner */
+            top: 50%;    /* Center vertically */
+            transform: translateY(-50%); /* Adjust vertical positioning */
         }
 
         /* Navigation Menu */
@@ -104,6 +113,13 @@
 
 <header class="site-header" role="banner">
     <div class="wrapper">
+        <!-- Logo displayed only on the expect page -->
+        {%- if page.url == "/expect/about/" -%}
+        <div class="logo-container">
+            <img src="expect_logo.png" alt="Logo" id="logo">
+        </div>
+        {%- endif -%}
+
         <!-- Site Title -->
         <a class="site-title" href="{{ "/" | relative_url }}">
             {{ site.title | escape }}
