@@ -1,29 +1,104 @@
 <footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+    <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
-  <div class="wrapper">
+    <div class="wrapper">
+        <h2 class="footer-heading">{{ site.title | escape }}</h2>
 
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list">
+                    <li class="p-name">
+                        {%- if site.author -%}
+                            {{ site.author | escape }}
+                        {%- else -%}
+                            {{ site.title | escape }}
+                        {%- endif -%}
+                    </li>
+                    {%- if site.email -%}
+                        <li>
+                            <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+                        </li>
+                    {%- endif -%}
+                </ul>
+            </div>
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-            </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
-        </ul>
-      </div>
-
-
+            <div class="footer-col footer-col-2">
+                <h3>Follow Us</h3>
+                <ul class="social-media-list">
+                    <li><a href="https://twitter.com/yourhandle" target="_blank">Twitter</a></li>
+                    <li><a href="https://github.com/axi-security/eXpect" target="_blank">GitHub</a></li>
+                    <li><a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></li>
+                    <!-- Add more social media links as necessary -->
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | escape }}. All rights reserved.</p>
+        </div>
     </div>
-
-  </div>
-
 </footer>
+
+<style>
+    /* Footer Styles */
+    .site-footer {
+        background-color: #2c3e50;
+        color: #ffffff;
+        padding: 40px 20px;
+        text-align: left;
+    }
+
+    .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-heading {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .footer-col-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .footer-col {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .footer-col:last-child {
+        margin-right: 0;
+    }
+
+    .contact-list, .social-media-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .contact-list li, .social-media-list li {
+        margin-bottom: 10px;
+    }
+
+    .social-media-list li a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .social-media-list li a:hover {
+        color: #1abc9c; /* Change color on hover */
+    }
+
+    .footer-bottom {
+        border-top: 1px solid #34495e;
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+
+    .footer-bottom p {
+        margin: 0;
+    }
+</style>
