@@ -117,12 +117,10 @@
 
 <header class="site-header" role="banner">
     <div class="wrapper">
-        <!-- Logo displayed only on the expect page -->
-        {%- if page.url == "/expect/about/" -%}
+        <!-- Logo -->
         <div class="logo-container">
             <img src="expect_logo.png" alt="Logo" id="logo">
         </div>
-        {%- endif -%}
 
         <!-- Site Title -->
         <a class="site-title" href="{{ "/" | relative_url }}">
@@ -142,7 +140,7 @@
 
             <div class="trigger">
                 <!-- Link to Expect -->
-                <a class="page-link" href="/expect/">eXpect</a>
+                <a class="page-link" href="/expect/">Expect</a>
                 <!-- Link to Blog -->
                 <a class="page-link" href="/blog/">Blog</a>
             </div>
