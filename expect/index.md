@@ -6,7 +6,7 @@ permalink: /expect/
 
 # eXpect: On the Security Implications of Violations in AXI Implementations
 
-![Logo](expect_logo.png)
+![Logo](expect_logo.png){: .logo }
 
 
 ## Abstract
