@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ page.title | escape }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+<!-- Include the header -->
+{% include header.html %}
+
+<!-- Main content where Markdown content will be rendered -->
+<main class="page-content">
+    <div class="wrapper">
+        {{ content }} <!-- This renders the content from the Markdown file -->
+    </div>
+</main>
+
+<!-- Include the footer -->
+{% include footer.html %}
+
+</body>
+</html>
