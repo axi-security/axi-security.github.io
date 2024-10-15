@@ -48,11 +48,18 @@ body {
 
 /* Logo Styles */
 .logo {
-    max-width: 150px; /* Set a max width for the logo */
+    max-width: 100px; /* Set a max width for the logo to make it smaller */
     height: auto; /* Maintain aspect ratio */
     display: block; /* Center it if needed */
     margin: 10px auto; /* Center it horizontally with smaller margin */
 }
+
+/* Reset styles for images */
+img {
+    max-width: 100%; /* Prevent images from exceeding the container width */
+    height: auto; /* Maintain aspect ratio */
+}
+
 
 /* Navigation Menu */
 .site-nav {
