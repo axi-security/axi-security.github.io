@@ -39,7 +39,7 @@ body {
 
 /* Adjust the main content to account for the fixed header */
 .page-content {
-    padding-top: 200px; /* Add padding to the top to avoid overlap */
+    padding-top: 120px; /* Add padding to the top to avoid overlap */
 }
 
 /* Site Title */
