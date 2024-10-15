@@ -8,10 +8,19 @@
 
 /* Body Styles */
 body {
-    display: flex; /* Ensures items are arranged in a column */
-    flex-direction: column; /* Forces vertical layout */
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Ensures vertical layout */
     align-items: center; /* Center contents horizontally */
     padding: 20px; /* Add some padding */
+    margin: 0; /* Remove default margin */
+}
+
+/* Ensure a wrapper for content */
+.content-wrapper {
+    max-width: 1200px; /* Limit width for large screens */
+    width: 100%; /* Full width */
+    padding: 20px; /* Add padding around the content */
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 /* Header Styles */
@@ -22,16 +31,7 @@ body {
     justify-content: space-between; /* Space between title and nav */
     align-items: center;
     position: relative; /* Needed for positioning the logo */
-}
-
-/* Wrapper to contain the title and nav */
-.wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between; /* Ensures space between title and nav */
-    align-items: center;
-    width: 100%; /* Ensures full width for alignment */
+    width: 100%; /* Ensures full width */
 }
 
 /* Site Title */
@@ -45,7 +45,7 @@ body {
 
 /* Logo Styles */
 .logo {
-    width: 200px; /* Set your desired width */
+    max-width: 100%; /* Ensure it scales responsively */
     height: auto; /* Maintain aspect ratio */
     display: block; /* Center it if needed */
     margin: 20px auto; /* Center it horizontally */
@@ -72,54 +72,6 @@ body {
     color: var(--secondary-color); /* Use the common hover color */
 }
 
-/* Mobile Menu Trigger */
-.menu-icon {
-    fill: #ffffff;
-    cursor: pointer;
-    display: none; /* Hidden by default on larger screens */
-}
-
-/* Nav Trigger Checkbox (for toggling mobile menu) */
-#nav-trigger {
-    display: none;
-}
-
-/* Mobile menu styles */
-.trigger {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-/* Responsive styles for small screens */
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block;
-    }
-    
-    /* Mobile version of the nav */
-    .trigger {
-        display: none;
-        flex-direction: column;
-        background-color: #34495e;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        padding: 20px;
-        border-radius: 8px;
-    }
-
-    /* Show the mobile menu when triggered */
-    #nav-trigger:checked ~ .trigger {
-        display: flex;
-    }
-
-    /* Style for page links in mobile */
-    .trigger .page-link {
-        margin: 10px 0;
-    }
-}
-
 /* Footer Styles */
 .site-footer {
     background-color: var(--primary-color); /* Use the common color */
@@ -138,13 +90,6 @@ body {
 
 .site-footer a:hover {
     color: #ffffff;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
 }
 
 /* Responsive Footer Styles */
