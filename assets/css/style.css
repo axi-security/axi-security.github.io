@@ -11,7 +11,7 @@ body {
     display: flex; /* Flexbox for layout */
     flex-direction: column; /* Ensures vertical layout */
     align-items: center; /* Center contents horizontally */
-    padding: 20px; /* Add some padding */
+    padding: 0; /* Remove default padding */
     margin: 0; /* Remove default margin */
 }
 
@@ -30,8 +30,11 @@ body {
     display: flex;
     justify-content: space-between; /* Space between title and nav */
     align-items: center;
-    position: relative; /* Needed for positioning the logo */
     width: 100%; /* Ensures full width */
+    position: fixed; /* Fixes header at the top */
+    top: 0; /* Positions the header at the top */
+    left: 0; /* Aligns the header to the left */
+    z-index: 1000; /* Ensures the header is above other content */
 }
 
 /* Site Title */
@@ -78,8 +81,9 @@ body {
     padding: 20px;
     color: #ffffff;
     text-align: center;
-    margin-top: 40px;
+    margin-top: auto; /* Push the footer to the bottom */
     font-size: 0.9em;
+    width: 100%; /* Ensures full width */
 }
 
 .site-footer a {
