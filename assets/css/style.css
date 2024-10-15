@@ -48,10 +48,10 @@ body {
 
 /* Logo Styles */
 .logo {
-    max-width: 100%; /* Ensure it scales responsively */
+    max-width: 150px; /* Set a max width for the logo */
     height: auto; /* Maintain aspect ratio */
     display: block; /* Center it if needed */
-    margin: 20px auto; /* Center it horizontally */
+    margin: 10px auto; /* Center it horizontally with smaller margin */
 }
 
 /* Navigation Menu */
