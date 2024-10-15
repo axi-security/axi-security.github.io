@@ -1,1 +1,108 @@
 
+/* assets/css/style.css */
+
+/* Header Styles */
+.site-header {
+    background-color: #2c3e50;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Space between title and nav */
+    align-items: center;
+    position: relative; /* Needed for positioning the logo */
+}
+
+/* Wrapper to contain the title and nav */
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Ensures space between title and nav */
+    align-items: center;
+    width: 100%; /* Ensures full width for alignment */
+}
+
+/* Site Title */
+.site-title {
+    font-size: 1.8em;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: auto; /* Pushes nav to the right */
+}
+
+/* Logo Styles */
+.logo-container {
+    position: absolute;
+    left: 20px;  /* Adjust to move the logo more to the corner */
+    top: 50%;    /* Center vertically */
+    transform: translateY(-50%); /* Adjust vertical positioning */
+}
+
+/* Navigation Menu */
+.site-nav {
+    position: relative;
+    display: flex;
+    justify-content: flex-end; /* Aligns the links to the right */
+}
+
+/* Page links */
+.page-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect on links */
+.page-link:hover {
+    color: #1abc9c;
+}
+
+/* Mobile Menu Trigger */
+.menu-icon {
+    fill: #ffffff;
+    cursor: pointer;
+    display: none; /* Hidden by default on larger screens */
+}
+
+/* Nav Trigger Checkbox (for toggling mobile menu) */
+#nav-trigger {
+    display: none;
+}
+
+/* Mobile menu styles */
+.trigger {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+    
+    /* Mobile version of the nav */
+    .trigger {
+        display: none;
+        flex-direction: column;
+        background-color: #34495e;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    /* Show the mobile menu when triggered */
+    #nav-trigger:checked ~ .trigger {
+        display: flex;
+    }
+
+    /* Style for page links in mobile */
+    .trigger .page-link {
+        margin: 10px 0;
+    }
+}
