@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: blog
 title: Blog
 permalink: /blog/
 ---
@@ -26,11 +26,11 @@ all signals in AXI-Lite.
 HERE COMES ANIMATION WITH HIGHLEVEL MANAGER SUBORDINATE AND THEN LOW LEVEL SIGNAL NEXT TO IT
 
 ## SVA
-To accurately capture the behavior of a designs behavior when implemented in SystemVerilog, SystemVerilog Assertions (SVA) are employed. SVAs allow designers to specify rules that define temporal properties and constraints of the design, ensuring the protocol operates as expected and helping to detect any deviations from the intended behavior early in the verification process. SVAs allow for fine grained constraints on the design ... what else to say ?  
+To accurately capture the behavior of a designs behavior when implemented in SystemVerilog, SystemVerilog Assertions (SVA) are employed. SVAs allow designers to specify rules that define temporal properties and constraints of the design, ensuring the protocol operates as expected and helping to detect any deviations from the intended behavior early in the verification process. SVAs allow for fine grained constraints on the design ... what else to say ?
 
 HERE SMALL EXAMPLE OF HOW SVAs work wnad what can be expressed
 
-The inherent ambiguity in the AXI specification can lead to challenges in verifying correct operation. To analyze the protocol's security more effectively, additional properties were introduced that impose stricter constraints than those in the specification. These properties help ensure more predictable and secure interactions between components. ... 
+The inherent ambiguity in the AXI specification can lead to challenges in verifying correct operation. To analyze the protocol's security more effectively, additional properties were introduced that impose stricter constraints than those in the specification. These properties help ensure more predictable and secure interactions between components. ...
 
 ## Example Linear
 

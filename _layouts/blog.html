@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ page.title | escape }} - {{ site.title | escape }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+<!-- Include the header -->
+{% include header.html %}
+
+<!-- Main content -->
+<main class="page-content">
+    <div class="wrapper">
+        <article class="blog-post">
+            <h1>{{ page.title }}</h1>
+            <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
+            <div class="post-content">
+                {{ content }}
+            </div>
+        </article>
+        <a href="{{ site.baseurl | append: '/' | relative_url }}" class="back-to-blog">← Back to Blog</a>
+    </div>
+</main>
+
+<!-- Include the footer -->
+<footer class="site-footer h-card">
+    <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+    <div class="wrapper">
+        <p class="footer-contact">
+            Contact: <a class="u-email" href="mailto:melisande.zontaroudes@inf.ethz.ch">melisande.zontaroudes@inf.ethz.ch</a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
