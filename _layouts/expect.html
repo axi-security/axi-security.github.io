@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<article class = "expect">
+<div class="expect-content">
+    <div class="wrapper-expect">
+        <!-- Title and Logo Section -->
+        <div class="title-logo">
+            <img src="{{ '/assets/expect_logo.png' | relative_url }}" alt="eXpect Logo" class="logo" />
+            <h1 class="expect-title">{{ page.title }}</h1> <!-- Title from Markdown -->
+        </div>
+
+        <!-- Two Column Layout (Authors and Content) -->
+        <div class="two-column-layout">
+            <!-- Authors Section -->
+            <div class="column authors">
+                <h2>Authors</h2>
+                <ul>
+                    <li><a href="https://melisandezonta.com" target="_blank">Melisande Zonta-Roudes</a></li>
+                    <li>Andres Meza</li>
+                    <li>Nora Hinderling</li>
+                    <li><a href="https://eit.rptu.de/fgs/eis/people/deutschmann" target="_blank">Lucas Deutschmann</a></li>
+                    <li><a href="https://frestucc.github.io" target="_blank">Francesco Restuccia</a></li>
+                    <li><a href="https://kastner.ucsd.edu/ryan" target="_blank">Ryan Kastner</a></li>
+                    <li><a href="https://n.ethz.ch/~sshivaji" target="_blank">Shweta Shinde</a></li>
+                </ul>
+            </div>
+
+            <!-- Content Section -->
+            <div class="column content">
+                <!-- Abstract and Markdown Content -->
+                {{ content }} <!-- Abstract and other Markdown content -->
+
+                <!-- Rectangles Section -->
+                <div class="rectangle-container">
+                    <a href="https://github.com/yourrepo" target="_blank" class="rectangle github-rect">Code</a>
+                    <a href="{{ '/assets/expect_iccad24.pdf' | relative_url }}" class="rectangle pdf-rect">Paper</a>
+                    <a href="#" class="rectangle cite-rect">Cite</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</article>
