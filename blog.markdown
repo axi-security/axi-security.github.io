@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Blog
-permalink: /blog/
+permalink: /61976/
 ---
 
 ## AXI Background
