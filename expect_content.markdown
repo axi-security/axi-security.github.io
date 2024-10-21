@@ -5,8 +5,8 @@ pdf_link: "/assets/expect_iccad24.pdf" # Link to your paper PDF
 citation: "Zonta-Roudes, M., Meza, A., Hinderling, N., Deutschmann, L., Restuccia, F., Kastner, R., & Shinde, S. 'eXpect: On the Security Implications of Violations in AXI Implementations.' ICCAD 2024."
 permalink: /expect/
 layout: expect
+content_type: abstract
 ---
-
 ## Abstract
 
 The Arm Advanced eXtensible Interface (AXI) protocol is a widely used on-chip interconnect for processors, accelerators, memories, and other IP cores. Any bugs in AXI implementations pose a security risk to the chip’s correctness. Buggy or non-compliant third-party IPs can exploit AXI implementation bugs to bypass the security mechanisms of the entire system. Identifying AXI implementation bugs is challenging because incomplete specifications allow room for implementation-specific behavior in high-performance designs.
@@ -15,4 +15,21 @@ The Arm Advanced eXtensible Interface (AXI) protocol is a widely used on-chip in
 
 We evaluated these exploits in realistic scenarios deployed on FPGA, revealing that AMD Xilinx protocol checker IPs missed 5 out of 7 exploits.
 
+### Contributions
+
+<div class ="pics">
+<div class="pic data-modelling">
+<img src = "{{'../assets/data-modelling.png' | realtive_url}}"/>
+<figcaption> my caption </figcaption>
+</div>
+<div class="pic specifications">
+<img src = "{{'../assets/specifications.png' | realtive_url}}"/>
+<figcaption> my caption 2 </figcaption>
+</div>
+<div class="pic bug">
+<img src = "{{'../assets/bug.png' | realtive_url}}"/>
+<figcaption> my caption 3 </figcaption>
+
+</div>
+</div>
 
