@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article class = "expect">
+<article class = "expect_back">
 <div class="expect-content">
     <div class="wrapper-expect">
         <!-- Title and Logo Section -->
@@ -39,6 +39,11 @@ layout: default
 					{% include icon-paper.svg %}	
 				</span>
 			</a>
+                	<a href="#" id="citeButton">
+				<span class="rectangle cite-rect">
+					{% include cite.svg %}
+				</span>
+			</a>
                 
 
 		</div>
@@ -56,4 +61,13 @@ layout: default
         </div>
     </div>
 </div>
+<div id="bibtexModal" class="modal">
+    	<div class="modal-content">
+        	<span class="close">&times;</span>
+        	<p id="bibtexText">@article{author2024, title={Your Paper Title}, author={Author, A.}, year={2024}}</p>
+       		<button id="copyButton">Copy BibTeX</button>
+   	</div>
+</div>
+
+{% include bibtex-popup.html %}
 </article>

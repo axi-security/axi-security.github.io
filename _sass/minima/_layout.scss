@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #dce4b8;//#2c3e50; /* Common color for header and footer */
+    --primary-color: #2c3e50; /* Common color for header and footer */
     --secondary-color: #1abc9c; /* Common color for hover effects */
     --tertiary-color: #34495e; /* Complementary color for additional elements */
     --font-color: #ffffff; 
@@ -290,6 +290,11 @@
         flex-direction: column; /* Stack rectangles on smaller screens */
         gap: 1em;
     }
+
+    .pics {
+    flex-direction: column; 
+    gap: 1em;
+  }
 }
 
 /* Rectangle Links */
@@ -407,13 +412,13 @@
 }
 .pic{
   display:flex; 
-  flex-direction: column;  
   height: 25% ;
   width: 25%; 
   //background-color: #aaaaaa;
   justify-content:center;
   align-items: center; 
   margin: 5% 2%;
+  flex-direction: column; 
 }
 .pic img{
  max-width: 60%; 
@@ -422,5 +427,42 @@
 }
 .pic figcaption{
   text-align: center;
-  margin: 0.5em 0; 
+  margin: 0.5em 0.5em; 
+}
+
+
+// POP UP
+/* Add this CSS either inline or in your main stylesheet */
+.modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+        background-color: #fff;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%;
+        position: relative; // for position of close button
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
 }

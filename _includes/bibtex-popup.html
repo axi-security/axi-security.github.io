@@ -1,0 +1,34 @@
+<script>
+
+    var modal = document.getElementById("bibtexModal");
+    var citeButton = document.getElementById("citeButton");
+    var closeButton = document.getElementsByClassName("close")[0];
+    var copyButton = document.getElementById("copyButton");
+    var bibtexText = document.getElementById("bibtexText");
+
+    // Show the modal when the cite button is clicked
+    citeButton.onclick = function(event) {
+        event.preventDefault();  // Prevent the default link behavior
+        modal.style.display = "block";
+    }
+
+    // Close the modal when the "x" is clicked
+    closeButton.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Copy BibTeX text to clipboard
+    copyButton.onclick = function() {
+        navigator.clipboard.writeText(bibtexText.textContent)
+		    .then(() => {})
+            .catch((error) => alert("Failed to copy BibTeX: " + error));
+    }
+
+</script>

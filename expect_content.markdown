@@ -20,15 +20,15 @@ We evaluated these exploits in realistic scenarios deployed on FPGA, revealing t
 <div class ="pics">
 <div class="pic data-modelling">
 <img src = "{{'../assets/data-modelling.png' | realtive_url}}"/>
-<figcaption> my caption </figcaption>
+<figcaption> Model </figcaption>
 </div>
 <div class="pic specifications">
 <img src = "{{'../assets/specifications.png' | realtive_url}}"/>
-<figcaption> my caption 2 </figcaption>
+<figcaption> Implementation Analysis </figcaption>
 </div>
 <div class="pic bug">
 <img src = "{{'../assets/bug.png' | realtive_url}}"/>
-<figcaption> my caption 3 </figcaption>
+<figcaption> Built end-to-end exploits </figcaption>
 
 </div>
 </div>
