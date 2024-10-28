@@ -192,15 +192,23 @@ assert property (@(posedge S_AXI_ACLK) disable iff (S_AXI_ARVALID && axi_arready
 ```
 
 
+Second Example needed ? 
+
 **Explanation Property** : 
 
-**Example Trace Evaluation** : 
+**Example Trace Evaluation** :
+
 ```verilog 
 assert property (@(posedge S_AXI_ACLK) disable iff (S_AXI_ARVALID && axi_arready) 
                 (S_AXI_ARESETN) && S_AXI_ARVALID && !axi_arready) => ($past(S_AXI_ARADDR) == S_AXI_ARADDR)
 ```
 
+The complete set of properties can be found [here](https://github.com/axi-security/eXpect).
 
+### Tool
+
+**eXpect** formally verifies any given AXI manager or subordinate implementation against it's defined properties with the help of the Questa Prop Check Tool. Questa Prop Check outputs a counterexample to the given property, or outputs the property as proven for the given implementation. **eXpect** is defined for AXI4-Lite as well as AXI4. ...  
+![eXpect Tool](/assets/eXpect_Tool.png)
 
 
 
