@@ -253,3 +253,32 @@ table {
     border: 1px solid $grey-color-light;
   }
 }
+
+/**
+* Trace Tables for examples in blog 
+*/ 
+
+.trace_tables table {
+  margin-bottom: $spacing-unit;
+  width: 30%;
+  text-align: $table-text-align;
+  color: lighten($text-color, 18%);
+  border-collapse: collapse;
+  border: 1px solid $grey-color-light;
+  tr {
+      background-color: lighten($grey-color-light, 20%);
+    
+  }
+  th, td {
+    padding: ($spacing-unit / 3) ($spacing-unit / 2);
+  }
+  th {
+    background-color: lighten($grey-color-light, 3%);
+    border: 1px solid darken($grey-color-light, 4%);
+    border-bottom-color: darken($grey-color-light, 12%);
+  }
+  td {
+    border: 1px solid $grey-color-light;
+  }
+
+}

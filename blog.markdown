@@ -72,25 +72,74 @@ always @( posedge S_AXI_ACLK ) begin
     end
 end 
 ```
-In this code snippet, the subordinate depends heavily on the manager's correct operation to properly latch the address. The S\_AXI\_ARVALID signal is driven by the manager. Furthermore the specification requires both ARVALID and ARREADY signals to be high simultaneously for the address to be latched. If we assume that the manager follows this requirement and does not deassert ARVALID until both signals are high, the address will be latched before the handshake occurs.
 
-Consider the following sequence of event: 
+**Scenario 1**: In this code snippet, the subordinate depends heavily on the manager's correct operation to properly latch the address. The S\_AXI\_ARVALID signal is driven by the manager. Furthermore the specification requires both ARVALID and ARREADY signals to be high simultaneously for the address to be latched. If we assume that the manager follows this requirement and does not deassert ARVALID until both signals are high, the address will be latched before the handshake occurs.
 
-At time 1: araddr = a, arvalid = 1, arready = 0
+Consider the following sequence of event:
 
-At time 2: araddr = a, arvalid = 0, arready = 1
+<div class="trace_tables">
+<table><thead>
+  <tr>
+    <th>Cycle (T)</th>
+    <th>1</th>
+    <th>2</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>ARADDR</td>
+    <td>a</td>
+    <td>a</td>
+  </tr>
+  <tr>
+    <td>ARVALID</td>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>ARREADY</td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
 
 However, if ARVALID is deasserted too soon, without a handshake occuring, the address will still be latched. Additionally, we note that araddr is only cleared during a reset. This means that the latched address will remain stored internally, even if no handshake has taken place, potentially creating vulnerabilities.
 
-Another potential failure occurs when the manager correctly avoids prematurely deasserting ARVALID, but fails to uphold the address stability property. This property states that ARADDR must remain stable (i.e., unchanged) until the address handshake is complete.
+**Scenario 2**: Another potential failure occurs when the manager correctly avoids prematurely deasserting ARVALID, but fails to uphold the address stability property. This property states that ARADDR must remain stable (i.e., unchanged) until the address handshake is complete.
 
 For example, consider the following sequence of events:
 
-At time 1: araddr = a, arvalid = 1, arready = 0
+<div class="trace_tables">
+<table><thead>
+  <tr>
+    <th>Cycle (T)</th>
+    <th>1</th>
+    <th>2</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>ARADDR</td>
+    <td>a</td>
+    <td>b</td>
+  </tr>
+  <tr>
+    <td>ARVALID</td>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>ARREADY</td>
+    <td>1</td>
+    <td>1</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
-At time 2: araddr = b, arvalid = 1, arready = 1
 
-In this scenario, even though both ARVALID and ARREADY are high at time 1, araddr changes from a to b. According to the specification, araddr = a will be latched instead of the expected araddr = b.
+In this scenario, even though both ARVALID and ARREADY are high at time 2, araddr changes from a to b. According to the specification, araddr = a will be latched instead of the expected araddr = b.
 
 While standard verification IPs can detect both of these violations since they directly contradict the specification, they may not adequately capture the security implications if such a violation occurs. Additionally, specifications that are loosely written can leave room for interpretation regarding what constitutes correct behavior. 
 
@@ -99,4 +148,59 @@ While standard verification IPs can detect both of these violations since they d
 
 In order to accurately capture the behavior we need to encode the behavior. This is done via System Verilog Assertions. Our model is composed off the *base model* and the *enhanced model*. Whereas the *enhanced model* builds on the *base model*. The *base model* effectively captures the defined behavior from the specification, whereas the *enhanced model* defines identified security properties on top. **eXpect** mainly focuses on the signals that are used to constitute the handshakes.
 
-To encode the two properties that are needed from the above example ...
+**Explanation Property** :
+- disable iff (S\_AXI\_ARVALID && axi\_arready) : when both S\_AXI\_ARVALID and axi\_arready are high the property is not checked.
+- a => b : evaluation of b is one cycle after a has occurred. Thus for our a = S\_AXI\_ARESETN && S\_AXI\_ARVALID && axi\_arready and b = S\_AXI\_ARVALID we check whether S\_AXI\_ARVALID is high one cycle after S\_AXI\_ARVALID && !axi\_arready
+
+**Example Trace Evaluation**:
+
+Consider Scenario: 
+
+<div class = "trace_tables">
+<table><thead>
+  <tr>
+    <th>Cycle (t)</th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>ARVALID</td>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>ARREADY</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+At t = 1 : a = False, thus property not triggered. At t = 2: a = True, and by looking at t = 3, we can see that b = True. At t = 3 : the property is disabled, as we do not arvalid does not need to be high at t = 4. At t = 4: a = False, thus property not evaluated. 
+
+```verilog
+assert property (@(posedge S_AXI_ACLK) disable iff (S_AXI_ARVALID && axi_arready) 
+                (S_AXI_ARESETN && S_AXI_ARVALID && !axi_arready) => S_AXI_ARVALID
+```
+
+
+**Explanation Property** : 
+
+**Example Trace Evaluation** : 
+```verilog 
+assert property (@(posedge S_AXI_ACLK) disable iff (S_AXI_ARVALID && axi_arready) 
+                (S_AXI_ARESETN) && S_AXI_ARVALID && !axi_arready) => ($past(S_AXI_ARADDR) == S_AXI_ARADDR)
+```
+
+
+
+
+
