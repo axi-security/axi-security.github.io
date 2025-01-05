@@ -1,1 +1,60 @@
 
+---
+layout: default
+---
+<article class = "xray">
+<div class="expect-content">
+    <div class="wrapper-expect">
+        <!-- Title and Logo Section -->
+        <div class="title-logo">
+            <img src="{{ '/assets/expect_logo.png' | relative_url }}" alt="eXpect Logo" class="logo" />
+            <h1 class="expect-title">{{ page.title }}</h1> <!-- Title from Markdown -->
+        </div>
+
+        <!-- Two Column Layout (Authors and Content) -->
+        <div class="two-column-layout">
+            <!-- Authors Section -->
+        	<div class="column authors">
+		<!-- Conference Information -->
+            	<div class="conference-info">
+                	<p><strong>Published at:</strong> ACM/IEEE International Conference on Computer-Aided Design (ICCAD 2024)</p>
+                	<p><strong><a href="https://confcats-event-sessions.s3.amazonaws.com/iccad24/uploads/ICCAD_2024_Program_Final.pdf" target="_blank">Best Paper Award Nomination</a></strong></p>
+            	</div>
+		<!-- Authors and Markdown Content -->
+		<h2>Authors</h2>
+                	<ul>
+                    		<li><a href="https://melisandezonta.com" target="_blank">Melisande Zonta-Roudes</a></li>
+                    		<li>Nora Hinderling</li>
+                    		<li><a href="https://n.ethz.ch/~sshivaji" target="_blank">Shweta Shinde</a></li>
+                	</ul>
+		
+		<div class="links">
+		<div class="rectangle-container">
+			<a href="https://github.com/axi-security/eXpect">
+				<span class="rectangle github-rect">
+					{% include icon-github.svg %}
+				</span>
+			</a> 
+			<a href="{{ '/assets/expect_iccad24.pdf' | relative_url }}">
+				<span class="rectangle pdf-rect">
+					{% include icon-paper.svg %}	
+				</span>
+			</a>
+                
+
+		</div>
+		</div>
+		</div>
+
+            <!-- Content Section -->
+            <div class="column content">
+                <!-- Abstract and Markdown Content -->
+		{% if page.content_type == "abstract" %}
+                {{ content }} <!-- Abstract and other Markdown content -->
+		{% endif %}
+                <!-- Rectangles Section -->
+            </div>
+        </div>
+    </div>
+</div>
+</article>
