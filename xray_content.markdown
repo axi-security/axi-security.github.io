@@ -2,7 +2,7 @@
 title: "XRAY: Detecting and Exploiting Vulnerabilities in Arm AXI Interconnects"
 github_repo: "https://github.com/axi-security/expect/" # Add the link to your GitHub repo here
 pdf_link: "/assets/expect_iccad24.pdf" # Link to your paper PDF
-citation: "Zonta-Roudes, M., Meza, A., Hinderling, N., Deutschmann, L., Restuccia, F., Kastner, R., & Shinde, S. 'eXpect: On the Security Implications of Violations in AXI Implementations.' ICCAD 2024."
+citation: "Zonta-Roudes, Hinderling, N., Shinde, S. 'Xray: Detecting and Exploiting Vulnerabilities in Arm AXI Interconnects' DATE 2025."
 permalink: /xray/
 layout: xray
 content_type: abstract
