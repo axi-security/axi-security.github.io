@@ -4,7 +4,7 @@ github_repo: "https://github.com/axi-security/expect/" # Add the link to your Gi
 pdf_link: "/assets/expect_iccad24.pdf" # Link to your paper PDF
 citation: "Zonta-Roudes, Hinderling, N., Shinde, S. 'Xray: Detecting and Exploiting Vulnerabilities in Arm AXI Interconnects' DATE 2025."
 permalink: /xray/
-layout: xray
+layout: expect
 content_type: abstract
 ---
 ## Abstract
