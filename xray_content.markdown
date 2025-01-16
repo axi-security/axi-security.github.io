@@ -16,21 +16,3 @@ To this end, **Xray** systematically analyzes AXI interconnects. Specifically, i
 Put together, **Xray** comprises 13 properties, has been tested on 7 interconnects, identifies 41 violations corresponding to 41 vulnerabilities. When compared to existing approaches such as verification IPs (VIPs) and protocol checkers from commercial tools, **Xray** identifies 19 known and 22 new violations. We show the security impact of **Xray** by sampling 5 XRAY violations to construct 3 proof-of-concept exploits on realistic scenarios deployed on FPGA to leak intermediate data, drop transactions, and corrupt memory. 
 
 ### Contributions
-
-<div class ="pics">
-<div class="pic data-modelling">
-<img src = "{{'../assets/data-modelling.png' | realtive_url}}"/>
-<figcaption> Model </figcaption>
-</div>
-<div class="pic specifications">
-<img src = "{{'../assets/specifications.png' | realtive_url}}"/>
-<figcaption> Implementation Analysis </figcaption>
-</div>
-<div class="pic bug">
-<img src = "{{'../assets/bug.png' | realtive_url}}"/>
-<figcaption> Built end-to-end exploits </figcaption>
-
-</div>
-</div>
-
-
