@@ -1,7 +1,7 @@
 ---
-title: "XRAY: Detecting and Exploiting Vulnerabilities in Arm AXI Interconnects"
+title: "Xray: Detecting and Exploiting Vulnerabilities in Arm AXI Interconnects"
 github_repo: "https://github.com/axi-security/xray/" # Add the link to your GitHub repo here
-pdf_link: "/assets/expect_iccad24.pdf" # Link to your paper PDF
+pdf_link: "/assets/xray_date25.pdf" # Link to your paper PDF
 citation: "Zonta-Roudes, Hinderling, N., Shinde, S. 'Xray: Detecting and Exploiting Vulnerabilities in Arm AXI Interconnects' DATE 2025."
 permalink: /xray/
 layout: xray
@@ -15,4 +15,21 @@ To this end, **Xray** systematically analyzes AXI interconnects. Specifically, i
 
 Put together, **Xray** comprises 13 properties, has been tested on 7 interconnects, identifies 41 violations corresponding to 41 vulnerabilities. When compared to existing approaches such as verification IPs (VIPs) and protocol checkers from commercial tools, **Xray** identifies 19 known and 22 new violations. We show the security impact of **Xray** by sampling 5 XRAY violations to construct 3 proof-of-concept exploits on realistic scenarios deployed on FPGA to leak intermediate data, drop transactions, and corrupt memory. 
 
+### Contributions 
+
+<div class ="pics">
+<div class="pic implementation-logo">
+<img src = "{{'../assets/implementation_logo.png' | realtive_url}}"/>
+<figcaption> Automatic Security Analysis </figcaption>
+</div>
+<div class="pic specifications">
+<img src = "{{'../assets/specifications.png' | realtive_url}}"/>
+<figcaption> Interconnect Analysis </figcaption>
+</div>
+<div class="pic bug">
+<img src = "{{'../assets/bug.png' | realtive_url}}"/>
+<figcaption> Detection & Exploitation of Vulnerabilities </figcaption>
+
+</div>
+</div>
 
