@@ -33,3 +33,5 @@ Put together, **Xray** comprises 13 properties, has been tested on 7 interconnec
 </div>
 </div>
 
+## Disclosure
+We disclosed our findings to AMD Xilinx in September 2024. 
