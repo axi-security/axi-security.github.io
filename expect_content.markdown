@@ -34,5 +34,5 @@ We evaluated these exploits in realistic scenarios deployed on FPGA, revealing t
 </div>
 
 ### Disclosure 
-We disclosed our findings to PULP and AMD Xilinx on January 2024. And AMD released an [announcement](https://www.amd.com/en/resources/product-security/bulletin/amd-sb-8005.html).
+We disclosed our findings to PULP and AMD Xilinx in January 2024. And AMD released an [announcement](https://www.amd.com/en/resources/product-security/bulletin/amd-sb-8005.html).
 
