@@ -13,8 +13,12 @@
   min-height: $spacing-unit * 1.865;
 
   // Positioning context for the mobile navigation icon
-  position: relative;
-  background-color: var(-- primary-color)
+  position: sticky;
+  width:100%; 
+  top: 0; 
+  left : 0; 
+  background-color: var(-- primary-color);
+  z-index : 1000; 
 
 }
 
@@ -26,6 +30,7 @@
   margin-bottom: 0;
   float: left;
   color :  #ece1de;
+
   /*&,
   &:visited {
     color: $grey-color-dark;
@@ -473,3 +478,63 @@
     color: black;
     text-decoration: none;
 }
+
+ // HOME PAGE
+.home {
+  text-align: center;
+}
+
+
+
+.home-logos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #f6f4ec; 
+  border-radius: 3%;
+  height: auto; 
+
+}
+
+.home-pic {
+ max-width: 20%; 
+ height: auto;
+ margin: 1em 4em;
+ padding: 2em 2em; 
+ background-color: #fffbf2;
+ border-radius: 5%;
+ border: 0.1em solid $background-color;
+
+ }
+
+ .home-pic img{
+  max-width: 80%; 
+ }
+
+.home-pic:hover {
+    transform: translate(0px, 5px); /* Subtle hover effect */
+    transition: transform 0.3s ease;
+    background-color: $background-color;
+    text-decoration: none; 
+}
+.home-pic figcaption{
+  margin-top: 0.5em; 
+  font-size: 120%;
+  font-weight: bold;
+  color: $grey-color-dark;
+}
+.home-pic figdescription{
+  margin-top: 0.3em; 
+  flex-wrap: flex;
+  overflow-wrap: break-word;
+  //font-weight: bold;
+  //margin: 
+  color: black;//$grey-color-dark;
+}
+
+.home title{
+color: red; 
+}
+
+
+
