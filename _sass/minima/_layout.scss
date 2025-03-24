@@ -300,6 +300,15 @@
     flex-direction: column; 
     gap: 1em;
   }
+
+  .home-logos{
+    background-color: $background-color !important;
+
+  }
+  .home-pic{
+   border : 0.1em solid $grey-color-light !important;
+   max-width: 40% !important; 
+ }
 }
 
 /* Rectangle Links */
