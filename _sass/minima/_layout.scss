@@ -297,7 +297,7 @@
     }
 
     .pics {
-    flex-direction: column; 
+    flex-direction: column;
     gap: 1em;
   }
 
@@ -307,7 +307,7 @@
   }
   .home-pic{
    border : 0.1em solid $grey-color-light !important;
-   max-width: 40% !important; 
+   max-width: 50% !important; 
  }
 }
 
