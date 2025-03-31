@@ -1,62 +1,63 @@
 ---
-layout: default
----
-<article class = "xray">
-<div class="xray-content">
-    <div class="wrapper-xray">
-        <!-- Title and Logo Section -->
-        <div class="title-logo">
-             <img src="{{ '/assets/xray_logo.png' | relative_url }}" alt="eXpect Logo" class="logo" />
-            <h1 class="xray-title">{{ page.title }}</h1> <!-- Title from Markdown -->
-        </div>
-
-        <!-- Two Column Layout (Authors and Content) -->
-        <div class="two-column-layout">
-		<div class="column authors">
-		<!-- Authors and Markdown Content -->
-
-            	<!-- Authors Section -->
-		<div class="conference-info">
-                	<p><strong>Published at:</strong> ACM/IEEE Design, Automation and Test in Europe Conference (DATE 2025)</p>
-                	<p><strong><a href="https://date25.date-conference.com/programme#BPA02" target="_blank">Best Paper Award Nomination</a></strong></p>
-            	</div>
-	    
-
-		<h2>Authors</h2>
-                	<ul>
-                    		<li><a href="https://melisandezonta.com" target="_blank">Melisande Zonta-Roudes</a></li>
-                    		<li>Nora Hinderling</li>
-                    		<li><a href="https://n.ethz.ch/~sshivaji" target="_blank">Shweta Shinde</a></li>
-                	</ul>
-		</div> 
-
-		<div class="links">
-		<div class="rectangle-container">
-			<a href="https://github.com/axi-security/xray">
-				<span class="rectangle github-rect">
-					{% include icon-github.svg %}
-				</span>
-			</a> 
-			<a href="{{ '/assets/xray_date25.pdf' | relative_url }}">
-				<span class="rectangle pdf-rect">
-					{% include icon-paper.svg %}	
-				</span>
-			</a>
-                
-
-		</div>
-		</div>
-
-
-            <!-- Content Section -->
-            <div class="column content">
-                <!-- Abstract and Markdown Content -->
-		{% if page.content_type == "abstract" %}
-                {{ content }} <!-- Abstract and other Markdown content -->
-		{% endif %}
-                <!-- Rectangles Section -->
-            </div>
-        </div>
-    </div>
-</div>
-</article>
+ layout: default
+ ---
+ <article class = "xray">
+ <div class="xray-content">
+     <div class="wrapper-xray">
+         <!-- Title and Logo Section -->
+         <div class="title-logo">
+              <img src="{{ '/assets/xray_logo.png' | relative_url }}" alt="eXpect Logo" class="logo" />
+             <h1 class="xray-title">{{ page.title }}</h1> <!-- Title from Markdown -->
+         </div>
+ 
+         <!-- Two Column Layout (Authors and Content) -->
+         <div class="two-column-layout">
+ 		<div class="column authors">
+ 		<!-- Authors and Markdown Content -->
+ 
+             	<!-- Authors Section -->
+ 		<div class="conference-info">
+                 	<p><strong>Published at:</strong> ACM/IEEE Design, Automation and Test in Europe Conference (DATE 2025)</p>
+                 	<p><strong><a href="https://date25.date-conference.com/programme#BPA02" target="_blank">Best Paper Award Nomination</a></strong></p>
+             	</div>
+ 
+ 
+ 		<h2>Authors</h2>
+                 	<ul>
+                     		<li><a href="https://melisandezonta.com" target="_blank">Melisande Zonta-Roudes</a></li>
+                     		<li>Nora Hinderling</li>
+                     		<li><a href="https://n.ethz.ch/~sshivaji" target="_blank">Shweta Shinde</a></li>
+                 	</ul>
+ 
+ 		<div class="links">
+ 		<div class="rectangle-container">
+ 			<!-- <a href="https://github.com/axi-security/xray">
+ 				<span class="rectangle github-rect">
+ 					{% include icon-github.svg %}
+ 				</span>
+ 			</a> -->
+ 			<a href="{{ '/assets/xray_date25.pdf' | relative_url }}">
+ 			<!-- <a href="{{ '/assets/xray_date25.pdf' | relative_url }}">
+ 				<span class="rectangle pdf-rect">
+ 					{% include icon-paper.svg %}	
+ 				</span>
+ 			</a>
+ 			</a> -->
+ 
+ 
+ 		</div>
+ 		</div>
+ 		</div>
+ 
+             <!-- Content Section -->
+             <div class="column content">
+                 <!-- Abstract and Markdown Content -->
+ 		{% if page.content_type == "abstract" %}
+                 {{ content }} <!-- Abstract and other Markdown content -->
+ 		{% endif %}
+                 <!-- Rectangles Section -->
+             </div>
+         </div>
+     </div>
+ </div>
+ </article>
